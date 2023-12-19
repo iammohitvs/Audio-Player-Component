@@ -38,4 +38,6 @@ const songs = [
     },
 ];
 
+export const songsLength = songs.length
+
 export default songs;
