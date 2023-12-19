@@ -10,8 +10,9 @@ function Audio({ song }, ref) {
                 src={song.song_src}
                 controls
                 autoPlay
+                style={{ display: "none" }}
             />
-            <Slider />
+            <Slider audioElementRef={ref} />
         </>
     );
 }

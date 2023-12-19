@@ -1,0 +1,80 @@
+audio player componenet
+    image
+        default image available
+        square thumbnail
+    song information
+        name
+        artist
+        album
+    comtrols
+        audio player bar
+            start and end time
+            skip to a aprt of the song
+        pause/play
+        next/previous song
+        volume
+        loop
+        keyboard event listeners
+
+component structure
+    <Audio Player data={songs list}>
+    data structure:
+        [
+            {
+                song-id,
+                image-info: {
+                    src,
+                    alt,
+                    as, //optional
+                },
+                song-src,
+                song-information: {
+                    name,
+                    artist,
+                    album,
+                },
+            },...
+        ]
+
+    inside AudioPlayer:
+        it goes through the data
+        it has the basic structure like controls, but other things that depeend on song are rendered separately
+        consists of and Audio Element that plays the song, loads the image and artist and album information
+        the audio bar data is drawn in the AudioPlayer component itself
+        the next and previous song, as well as volume is set here
+
+        it passess data like volume and set current time to the Audio Element
+
+        <AudioPlayer>
+            setSong state
+            setVolume state
+            setTime state
+            isPaused/isPlay state
+
+            song reference
+
+            playNextSong
+            playPreviousSong
+
+            <Audio 
+                data of the particular song
+                memoize the audio element
+                pause/play state
+                volume state
+                time state
+            />
+
+            <input type="range" />
+            <0:00 and total time>
+            <controls>
+                <pause/play button>
+                <next/previous song button>
+                <volume input range />
+            </controls>
+        </AudioPlayer>
+
+
+dependancies:
+    lucide
+    new componenet
+
